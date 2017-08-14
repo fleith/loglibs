@@ -1,5 +1,6 @@
 [requires]
 spdlog/0.13.0@memsharded/stable
+KTools/4.0.0@rafael.bertoldi/stable
 
 [generators]
 cmake

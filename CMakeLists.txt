@@ -25,3 +25,9 @@ target_link_libraries(easylogging-bench Threads::Threads)
 target_include_directories(easylogging-bench PRIVATE 3rd_party/easyloggingpp_v9.95.0)
 target_sources(easylogging-bench PRIVATE 3rd_party/easyloggingpp_v9.95.0/easylogging++.cc)
 configure_file(easyl.conf bin/easyl.conf COPYONLY)
+
+############
+#klogger
+############
+add_executable(klogger-bench klogger-bench.cpp)
+conan_target_link_libraries(klogger-bench)
