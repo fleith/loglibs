@@ -1,0 +1,6 @@
+[requires]
+spdlog/0.13.0@memsharded/stable
+
+[generators]
+cmake
+
