@@ -2,6 +2,7 @@ project(liblogs)
 cmake_minimum_required(VERSION 2.8.12)
 
 set (CMAKE_CXX_STANDARD 11)
+add_definitions("-std=c++11")
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
@@ -48,11 +49,4 @@ target_link_libraries(glog-bench ${CONAN_LIBS})
 add_executable(glog-bench-mt glog-bench-mt.cpp)
 target_link_libraries(glog-bench-mt ${CONAN_LIBS})
 
-##########
-#boost log
-##########
-add_executable(boost-bench boost-bench.cpp)
-conan_target_link_libraries(boost-bench)
-conan_define_targets(boost-bench)
-#target_include_directories(boost-bench Boost::Boost)
 

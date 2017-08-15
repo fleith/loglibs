@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include <KTools/KLogger.h>
-#include <bits/unique_ptr.h>
+#include <memory>
 
 int main( void )
 {
