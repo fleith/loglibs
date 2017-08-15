@@ -7,6 +7,7 @@
 #include <atomic>
 #include <cstdlib>
 #include "spdlog/spdlog.h"
+#include "Lines.h"
 
 
 using namespace std;
@@ -18,11 +19,9 @@ int main(int argc, char* argv[])
     if(argc > 1)
         thread_count = std::atoi(argv[1]);
 
-    int howmany = 1000000;
-
     namespace spd = spdlog;
 
-    auto logger = spdlog::create<spd::sinks::simple_file_sink_mt>("file_logger", "spd-bench-mt.txt", false);
+    auto logger = spdlog::create<spd::sinks::simple_file_sink_mt>("file_logger", "logs/spd-bench-mt.txt", false);
 
     logger->set_pattern("[%Y-%b-%d %T.%e]: %v");
 
@@ -36,7 +35,7 @@ int main(int argc, char* argv[])
                                           while (true)
                                           {
                                               int counter = ++msg_counter;
-                                              if (counter > howmany) break;
+                                              if (counter > lines::quantity) break;
                                               logger->info("spdlog message #{}: This is some text for your pleasure", counter);
                                           }
                                       }));
