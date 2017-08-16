@@ -31,6 +31,8 @@ configure_file(easyl.conf bin/easyl.conf COPYONLY)
 ############
 add_executable(klogger-bench klogger-bench.cpp Lines.h)
 conan_target_link_libraries(klogger-bench)
+add_executable(klogger-bench-mt klogger-bench-mt.cpp Lines.h)
+conan_target_link_libraries(klogger-bench-mt)
 
 #############
 #easylogging
